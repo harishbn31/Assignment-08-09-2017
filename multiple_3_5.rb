@@ -8,9 +8,6 @@
 def multiple(numbers)
 	sum = 0
 	nums = numbers.find_all{|n| n%3 ==0 || n%5==0}
-	nums.each do |num|
-		sum += num
-	end
-	return sum
+	return nums.inject(:+)
 end
 puts multiple((0..9).to_a)
